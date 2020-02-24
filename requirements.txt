@@ -4,3 +4,4 @@ pandas==0.24.2
 plotly==4.5.1
 scipy
 DateTime
+gunicorn==19.3.0
