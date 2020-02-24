@@ -7,6 +7,7 @@ import dash_table
 import dash_core_components as dcc
 import dash_html_components as html 
 import datetime as dt
+import flask
 
 #### Importing Data ###########################################################
 sheet_Death_url = 'https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_19-covid-Deaths.csv'
@@ -294,8 +295,8 @@ daySinceinfected = daySinceinfected.days
 #app = dash.Dash()
 
 external_stylesheets = ['main.css']
-app = dash.Dash(__name__, external_stylesheets=external_stylesheets)
-server = app.server
+server = flask.Flask(__name__)
+app = dash.Dash(server = server, external_stylesheets=external_stylesheets )
 
 
 
