@@ -291,7 +291,7 @@ daySinceinfected = daySinceinfected.days
 
 
 
-app = dash.Dash()
+#app = dash.Dash()
 
 external_stylesheets = ['main.css']
 app = dash.Dash(__name__, external_stylesheets=external_stylesheets)
@@ -456,7 +456,7 @@ def serve_layout():
                         )
                               ] 
                        ),
-                  html.Div(className = 'box7', #https://dash.plot.ly/dash-core-components/tabs #https://www.phillipsj.net/posts/deploying-dash-to-google-app-engine/
+                  html.Div(className = 'box7',
                       children = [
                               dcc.Tabs([
                                       
