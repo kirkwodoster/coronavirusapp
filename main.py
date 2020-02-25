@@ -84,7 +84,7 @@ cdr['Death'] = df_Death.iloc[:,-1].values
 
 ##### Geo Graphic Plot ########################################################
 
-mapbox_access_token ="pk.eyJ1Ijoia2lya3dvb2RzdGVyIiwiYSI6ImNrNnN0YzRtMTAzaWgzbHFpeDY3NXNmYXEifQ.pL_1KrPfWXY5I-C7XMwesg"
+mapbox_access_token =""
 
 fig_map = go.Figure()
 
