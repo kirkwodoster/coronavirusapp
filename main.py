@@ -241,16 +241,10 @@ fig_ratio.update_layout(height = box7figsize,
 
 
 
-x1 = np.array(range(0,len(x)))
-y = confirmed_totals_all 
+x1 = np.linspace(1,len(x),len(x)).astype('int')
+y = confirmed_totals_all.values 
   
-def test(x, a, b,c,d): 
-    return a*np.exp(b*x)
-  
-param, param_cov = curve_fit(test, x1, y) 
-
-ans = (param[0]*(np.exp(param[1]*x1))) 
-
+poly = np.poly1d(np.polyfit(x1,y,4))
 
 fig_fit = go.Figure()
 
@@ -262,7 +256,7 @@ fig_fit.add_trace(go.Scatter(x=x, y=confirmed_totals_all,
                     ))
 
 
-fig_fit.add_trace(go.Scatter(x=x, y=ans,
+fig_fit.add_trace(go.Scatter(x=x, y=poly(x1),
                     mode='lines',
                     name='Regression',
                     line = dict(color='red')
